@@ -40,7 +40,7 @@ Field.prototype.setFigure = function (i, j, figure){
 Field.prototype.moveFigure = function (i1, j1, i2, j2){
     if (this.isInField(i1, j1) === true && this.isInField(i2, j2) === true) {
         this.setFigure(i2, j2, this.getFigure(i1, j1));
-        this.setFigure(i1, j1, new figure.Figure())
+        this.field[i1][j1] = new figure.Figure();
     }
 }
 

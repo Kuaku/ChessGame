@@ -25,7 +25,7 @@ ChessGame.prototype.isStarted = function() {
     return this.started;
 }
 ChessGame.prototype.initWhiteFirstRow = function(firstRowString){
-    if (validatedFirstRow(firstRowString) === true){
+    if (validatedFirstRow(firstRowString) === true  && this.whiteInit === false){
         for (let j = 0; j < firstRowString.length; j++){
             this.field.setFigure(7, j, new figure.Figure(figure.COLORS[figure.WHITE], firstRowString.charAt(j)))
         }
@@ -35,7 +35,7 @@ ChessGame.prototype.initWhiteFirstRow = function(firstRowString){
     return false;
 }
 ChessGame.prototype.initBlackFirstRow = function(firstRowString){
-    if (validatedFirstRow(firstRowString) === true){
+    if (validatedFirstRow(firstRowString) === true && this.blackInit === false){
         for (let j = 0; j < firstRowString.length; j++){
             this.field.setFigure(0, j, new figure.Figure(figure.COLORS[figure.BLACK], firstRowString.charAt(j)))
         }
